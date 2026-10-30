@@ -1,0 +1,260 @@
+/* House style 
+   main: #1B365D
+   ground: #F4F6F9
+   ink: #222222
+   accent: #D97706
+   headings: Merriweather, serif
+   body: Inter, sans-serif 
+*/
+
+/* ==========================================================================
+   BLOCK 1: HOUSE STYLE (Owner: Member 1)
+   Global resets, typography, colors, links, header, nav, footer
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F4F6F9;
+  color: #222222;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, serif;
+  color: #1B365D;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: #1B365D;
+  text-decoration: underline;
+}
+
+a:hover, a:focus {
+  color: #D97706;
+}
+
+/* Prevent image/input overflow on narrow screens */
+img, input, select, textarea {
+  max-width: 100%;
+}
+
+header {
+  background-color: #1B365D;
+  color: #FFFFFF;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Sticky Flexbox Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #1B365D;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 3px solid #D97706;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li a {
+  display: block;
+  padding: 0.85rem 1.25rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav li a:hover, nav li a:focus {
+  background-color: #D97706;
+  color: #FFFFFF;
+}
+
+footer {
+  background-color: #1B365D;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+
+/* ==========================================================================
+   BLOCK 2: LAYOUT (Owner: Member 1)
+   Grid areas, card rows, table scrolling container
+   ========================================================================== */
+
+/* Main CSS Grid layout with named areas */
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-areas:
+    "header  header"
+    "nav     nav"
+    "main    aside"
+    "footer  footer";
+}
+
+header { grid-area: header; }
+nav    { grid-area: nav; }
+main   { grid-area: main; padding: 2rem; }
+aside  { grid-area: aside; padding: 2rem 1.5rem; background-color: #E2E8F0; border-left: 1px solid #CBD5E1; }
+footer { grid-area: footer; }
+
+/* Wrapping Card Container */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  flex: 1 1 18rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  border-bottom: 2px solid #D97706;
+  padding-bottom: 0.5rem;
+}
+
+/* Horizontal scroll container for tables */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid #CBD5E1;
+}
+
+th {
+  background-color: #1B365D;
+  color: #FFFFFF;
+}
+
+
+/* ==========================================================================
+   BLOCK 3: PUBLIC PAGES (Owner: Member 1)
+   Rules for index.html, about.html, contact.html
+   ========================================================================== */
+
+/* Accent button styling */
+.btn-primary {
+  display: inline-block;
+  background-color: #D97706;
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #B45309;
+  color: #FFFFFF;
+}
+
+/* Form controls */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.25rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+}
+
+
+/* ==========================================================================
+   BLOCK 4: FEATURE PAGES (Owner: Member 2 / Team Members)
+   Rules for specific feature pages (e.g., issue submission, tracking)
+   ========================================================================== */
+
+/* Add member-owned page styles here */
+
+
+/* ==========================================================================
+   BLOCK 5: PHONE / MOBILE RESPONSIVE - KEEP LAST (Owner: Member 1)
+   Collapses grid into single column for screen width <= 700px
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  aside {
+    border-left: none;
+    border-top: 1px solid #CBD5E1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav li a {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
