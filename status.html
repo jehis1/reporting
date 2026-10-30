@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report It | Track Status</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Track Infrastructure Reports</h1>
+    <p>Real-time overview of community submissions and repair queues</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="report.html">Report Issue</a></li>
+      <li><a href="status.html">Track Status</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Municipal Repair Queue</h2>
+    <p>Defects are automatically ranked by severity score, safety risk, and reporting frequency[cite: 17, 18].</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Location</th>
+            <th>Priority Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R-1045</td>
+            <td>Illegal dumping</td>
+            <td>Pine Road</td>
+            <td>92</td>
+            <td><span class="status-badge status-submitted">Submitted</span></td>
+          </tr>
+          <tr>
+            <td>R-1044</td>
+            <td>Blocked drain</td>
+            <td>River Road</td>
+            <td>88</td>
+            <td><span class="status-badge status-routed">Routed</span></td>
+          </tr>
+          <tr>
+            <td>R-1043</td>
+            <td>Streetlight</td>
+            <td>Station Road</td>
+            <td>81</td>
+            <td><span class="status-badge status-submitted">Assigned</span></td>
+          </tr>
+          <tr>
+            <td>R-1041</td>
+            <td>Broken sidewalk</td>
+            <td>Park Avenue</td>
+            <td>75</td>
+            <td><span class="status-badge status-resolved">Resolved</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <aside>
+    <h3>Authority Routing</h3>
+    <p>Complaints are routed appropriately between County Governments and National Agencies (KURA / KeNHA)[cite: 17, 18].</p>
+  </aside>
+
+  <footer>
+    <p>&copy; 2026 Report It Platform. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
