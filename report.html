@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report It | Report an Issue</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Report an Infrastructure Defect</h1>
+    <p>Submit geotagged evidence to your municipal authority</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="report.html">Report Issue</a></li>
+      <li><a href="status.html">Track Status</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>New Incident Form</h2>
+    <p>Fill out the details below. Reports are automatically queued offline if your network connection is unstable[cite: 17, 18].</p>
+
+    <form action="#" method="POST">
+      <label for="category">Defect Category:</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="pothole">Pothole / Road Damage</option>
+        <option value="streetlight">Street Lighting Failure</option>
+        <option value="drainage">Drainage & Flooding Risk</option>
+        <option value="signage">Missing / Damaged Signage</option>
+      </select>
+
+      <label for="description">Description & Severity Details:</label>
+      <textarea id="description" name="description" rows="4" placeholder="Describe the hazard location and safety impact..." required></textarea>
+
+      <label for="media">Upload Photo or Video Evidence:</label>
+      <input type="file" id="media" name="media" accept="image/*,video/*" required>
+
+      <label for="location">GPS Location / Landmark:</label>
+      <input type="text" id="location" name="location" value="Market Street, Ward 3 (GPS Auto-detected)" required>
+
+      <button type="submit" class="btn-primary" style="margin-top: 1.5rem;">Submit Report</button>
+    </form>
+  </main>
+
+  <aside>
+    <h3>Offline Support</h3>
+    <p>Data is securely buffered on your device and synchronized automatically once network connectivity is restored[cite: 17, 18].</p>
+  </aside>
+
+  <footer>
+    <p>&copy; 2026 Report It Platform. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
